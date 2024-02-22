@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+
+
+@model WebAppBank.Models.DashboardViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h2>Welcome, @Html.DisplayFor(model => model.Username)!</h2>
+    <p>Your account balance: $@Html.DisplayFor(model => model.AccountBalance)</p>
+    <p>Other dashboard information here...</p>
+
+    <form method="post" action="/Bank/Logout">
+        <button type="submit">Logout</button>
+    </form>
+</body>
+</html>

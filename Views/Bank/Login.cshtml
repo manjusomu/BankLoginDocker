@@ -1,0 +1,34 @@
+﻿@model WebAppBank.Models.LoginViewModel;
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    @using (Html.BeginForm("Login", "Bank", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div>
+            @Html.LabelFor(model => model.Username)
+            @Html.TextBoxFor(model => model.Username)
+            @Html.ValidationMessageFor(model => model.Username)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Password)
+            @Html.PasswordFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+        <button type="submit">Login</button>
+    }
+</body>
+</html>
